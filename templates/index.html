@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Social Research Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="box">
+    <h1>🌍 ISHCMC Individual and Society Research Assistant</h1>
+    <p>Explore history, migration, inequality, sustainability, and global issues.</p>
+
+    <form method="POST">
+        <input type="text" name="topic" placeholder="Enter a research topic..." value="{{ topic }}">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if warning %}
+        <p class="warning">{{ warning }}</p>
+    {% endif %}
+
+    {% if results %}
+        <h3>Sources</h3>
+        {% for s in results %}
+            <div class="source">
+                <strong>{{ s.title }}</strong><br>
+                <a href="{{ s.url }}" target="_blank">{{ s.url }}</a>
+            </div>
+        {% endfor %}
+    {% elif topic and not warning %}
+        <p>No sources found.</p>
+    {% endif %}
+</div>
+</body>
+</html>
