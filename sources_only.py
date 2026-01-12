@@ -102,8 +102,7 @@ def academic_sources(topic):
     sources = []
 
     mapping = {
-        # ANCIENT CIVILIZATIONS
-        "ancient": [
+             "ancient": [
             {"title": "Perseus Digital Library", "url": "http://www.perseus.tufts.edu/hopper/"},
             {"title": "Fordham Ancient Texts", "url": "https://sourcebooks.fordham.edu/ancient/asbook.asp"}
         ],
@@ -111,9 +110,59 @@ def academic_sources(topic):
             {"title": "Electronic Text Corpus Sumerian", "url": "https://etcsl.orinst.ox.ac.uk/"},
             {"title": "CDLI Cuneiform Digital Library", "url": "https://cdli.ucla.edu/"}
         ],
+        "mesopotamia": [
+            {"title": "Mesopotamian Chronicles", "url": "https://www.livius.org/sources/about-mesopotamian-chronicles/"},
+            {"title": "British Museum Mesopotamia", "url": "https://www.britishmuseum.org/collection/galleries/mesopotamia"}
+        ],
+        "egypt": [
+            {"title": "British Museum Ancient Egypt", "url": "https://www.britishmuseum.org/collection/ancient-egypt"},
+            {"title": "UCLA Digital Egypt", "url": "https://escholarship.org/uc/esm_uee"}
+        ],
+        "greece": [
+            {"title": "British Museum Ancient Greece", "url": "https://www.britishmuseum.org/collection/ancient-greece"},
+            {"title": "Theoi Classical Texts", "url": "https://www.theoi.com/Texts.html"}
+        ],
+        "rome": [
+            {"title": "British Museum Romans", "url": "https://www.britishmuseum.org/collection/romans"},
+            {"title": "LacusCurtius Roman Texts", "url": "https://penelope.uchicago.edu/Thayer/E/Roman/home.html"}
+        ],
+        "persia": [
+            {"title": "Achaemenid Royal Inscriptions", "url": "https://www.livius.org/articles/concept/achaemenid-royal-inscriptions/"},
+            {"title": "Persepolis Fortification Archive", "url": "https://isac.uchicago.edu/research/projects/persepolis-fortification-archive"}
+        ],
+        "india": [
+            {"title": "Vedic Heritage Portal", "url": "https://vedicheritage.gov.in/"},
+            {"title": "Ancient India Texts", "url": "https://www.sacred-texts.com/hin/index.htm"}
+        ],
+        "china": [
+            {"title": "Chinese Text Project", "url": "https://ctext.org/"},
+            {"title": "Oracle Bones Digital Archive", "url": "https://oracle-bones.chineseculture.org/"}
+        ],
+        "maya": [
+            {"title": "Mesoamerican Hieroglyphic Database", "url": "https://mayaglyphs.org/"},
+            {"title": "Corpus of Maya Hieroglyphs", "url": "https://www.famsi.org/research/phelps/index.html"}
+        ],
+        "aztec": [
+            {"title": "Florentine Codex Online", "url": "https://www.brown.edu/Departments/Stg/florentinecodex/"},
+            {"title": "Mesoamerican Ethnohistory", "url": "https://www.famsi.org/research/gossen/index.html"}
+        ],
+        "inca": [
+            {"title": "Quechua Chronicles", "url": "https://www.andinaperu.com/quechua-chronicles.php"},
+            {"title": "Royal Commentaries of Inca", "url": "https://oll.libertyfund.org/titles/garcilaso-de-la-vega-royal-commentaries-of-the-incas"}
+        ],
+
+        # 1700s, 1800s, 1900s (your previous request)
         "1700s": [
             {"title": "Enlightenment Documents - Yale Avalon", "url": "https://avalon.law.yale.edu/subject_menus/18th.asp"},
             {"title": "French Revolution Primary Sources", "url": "https://revolution.chnm.org/"}
+        ],
+        "1800s": [
+            {"title": "Victorian Web Primary Sources", "url": "https://www.victorianweb.org/history/"},
+            {"title": "19th Century Documents - EuroDocs", "url": "https://eudocs.lib.byu.edu/index.php/19th_Century"}
+        ],
+        "1900s": [
+            {"title": "League of Nations Archives", "url": "https://libraryresources.unog.ch/leagueofnationsarchives"},
+            {"title": "20th Century Primary Sources - EuroDocs", "url": "https://eudocs.lib.byu.edu/index.php/20th_Century"}
         ],
         "world war": [
             {"title": "US Army WWII Records", "url": "https://www.history.army.mil/html/reference/wwII/index.html"},
