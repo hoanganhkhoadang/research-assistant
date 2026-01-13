@@ -19,9 +19,6 @@ def normalize_topic(topic: str) -> str:
     )
     return topic.strip()
 
-# -------------------------
-# Reliable Institutional Sources
-# -------------------------
 def institutional_sources(topic):
     t = topic.lower()
     sources = []
@@ -42,12 +39,24 @@ def institutional_sources(topic):
             {"title": "UNDP Inequality HDI", "url": "https://hdr.undp.org/data-center/inequality-adjusted-human-development-index"}
         ])
 
-    # Migration & refugees
-    if any(w in t for w in ["migration", "migrate", "immigration", "emigration", "refugee", "asylum", "border", "displacement"]):
+    # Migration, refugees & BOAT PEOPLE (enhanced with specific keywords + sources)
+    if any(w in t for w in ["migration", "migrate", "immigration", "emigration", "refugee", "asylum", 
+                           "border", "displacement", "boat people", "boatpeople"]):
         sources.extend([
             {"title": "UNHCR Refugee Data", "url": "https://www.unhcr.org/refugee-statistics/"},
             {"title": "IOM Migration Report 2024", "url": "https://worldmigrationreport.iom.int/"},
-            {"title": "UN Migrant Stock Data", "url": "https://www.un.org/development/desa/pd/content/international-migrant-stock"}
+            {"title": "UN Migrant Stock Data", "url": "https://www.un.org/development/desa/pd/content/international-migrant-stock"},
+            # Boat People specific institutional sources
+            {"title": "UNHCR Vietnamese Boat People Archive", "url": "https://www.unhcr.org/excom/scip/3ae68ccdc/refugee-boat-people-south-east-asia-some-recent-developments.html"},
+            {"title": "UNHCR Orderly Departure Program", "url": "https://www.unhcr.org/publications/operation-reports/viet-nam-orderly-departure-programme"}
+        ])
+
+    # Displaced Migrants/IDPs (fixed indentation + moved before return)
+    if any(w in t for w in ["displaced", "idp", "internally displaced"]):
+        sources.extend([
+            {"title": "UNHCR Global IDP Data", "url": "https://www.unhcr.org/idp-data.html"},
+            {"title": "IDMC Internal Displacement Database", "url": "https://www.internal-displacement.org/database/displacement-data"},
+            {"title": "IOM Displacement Tracking Matrix", "url": "https://dtm.iom.int/"}
         ])
 
     # Politics & governance
@@ -58,6 +67,14 @@ def institutional_sources(topic):
             {"title": "V-Dem Democracy Dataset", "url": "https://v-dem.net/"}
         ])
 
+    # Population-Economic Equilibrium
+    if any(w in t for w in ["equilibrium", "malthusian", "demographic equilibrium"]):
+        sources.extend([
+            {"title": "World Bank Population Growth Data", "url": "https://data.worldbank.org/indicator/SP.POP.GROW"},
+            {"title": "UN World Population Prospects 2024", "url": "https://population.un.org/wpp/"},
+            {"title": "UN Population Economics Summary", "url": "https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf"}
+        ])
+
     # Climate & environment
     if any(w in t for w in ["climate", "climate change", "climate crisis", "global warming", "environment", "carbon", "pollution"]):
         sources.extend([
@@ -66,8 +83,7 @@ def institutional_sources(topic):
             {"title": "UNEP Emissions Gap Report", "url": "https://www.unep.org/emissions-gap-report-2024"}
         ])
 
-    # -------------------------
-    # POLLUTION - NEW DEDICATED CATEGORY
+    # POLLUTION - DEDICATED CATEGORY
     if any(w in t for w in ["pollution", "air pollution", "water pollution", "soil pollution", "pm2.5"]):
         sources.extend([
             {"title": "World Bank PM2.5 Pollution Data", "url": "https://data.worldbank.org/indicator/EN.ATM.PM25.MC.M3"},
@@ -91,7 +107,18 @@ def institutional_sources(topic):
             {"title": "UN Genocide Documents", "url": "https://www.un.org/en/genocideprevention/documents"}
         ])
 
+    # Ho Chi Minh City / Vietnam Localized Addition
+    if any(w in t for w in ["vietnam", "hcmc", "ho chi minh"]):
+        sources.extend([
+            {"title": "UNHCR Vietnam Refugee Stats", "url": "https://data.unhcr.org/en/country/vnm"},
+            {"title": "IOM Vietnam Migration Profile", "url": "https://vietnam.iom.int/"},
+            {"title": "Vietnam Center for Environmental Monitoring (AQI)", "url": "https://aqicn.org/city/ho-chi-minh-city/"},
+            {"title": "HCMC Air Quality Monitoring Network Dataset", "url": "https://data.mendeley.com/datasets/pk6tzrjks8/1"}
+        ])
+
     return sources
+
+
 
 # -------------------------
 # Academic Sources
