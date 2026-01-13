@@ -24,7 +24,7 @@ def institutional_sources(topic):
     sources = []
 
     # Racism, discrimination, identity
-    if any(w in t for w in ["racism", "race", "racial", "segregation", "apartheid", "discrimination"]):
+    if any(w in t for w in ["racism", "race", "racial", "segregation", "apartheid", "discrimination", "slavery"]):
         sources.extend([
             {"title": "UN CERD Committee Reports", "url": "https://www.ohchr.org/en/treaty-bodies/cerd"},
             {"title": "US DOJ Civil Rights Cases", "url": "https://www.justice.gov/crt/case-summaries"},
