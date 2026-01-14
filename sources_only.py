@@ -23,6 +23,13 @@ def institutional_sources(topic):
     t = topic.lower()
     sources = []
 
+    # Gender Equality
+    if any(w in t for w in ["gender", "gender equality"]):
+        sources.extend([
+            {"title": "UN Gender Equality", "url": "https://www.un.org/en/global-issues/gender-equality"}
+            {"title": "Tracing Global Trends in Education: A Tale of Old and New Gender Gaps", "url": "https://genderdata.worldbank.org/en/data-stories/a-tale-of-old-and-new-gender-gaps"}
+        ])
+
     # Racism, discrimination, identity
     if any(w in t for w in ["racism", "race", "racial", "segregation", "apartheid", "discrimination", "slavery"]):
         sources.extend([
