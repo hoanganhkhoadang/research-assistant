@@ -23,12 +23,13 @@ def institutional_sources(topic):
     t = topic.lower()
     sources = []
 
-    # Gender Equality
-    if any(w in t for w in ["gender", "gender equality"]):
-        sources.extend([
-            {"title": "UN Gender Equality", "url": "https://www.un.org/en/global-issues/gender-equality"}
-            {"title": "Tracing Global Trends in Education: A Tale of Old and New Gender Gaps", "url": "https://genderdata.worldbank.org/en/data-stories/a-tale-of-old-and-new-gender-gaps"}
-        ])
+    sources.extend([
+    {"title": "UN Gender Equality", "url": "https://www.un.org/en/global-issues/gender-equality"},  # ← ADD COMMA HERE
+    {"title": "World Bank Gender Data", "url": "https://genderdata.worldbank.org/"},
+    {"title": "UN Women Data Hub", "url": "https://data.unwomen.org/"}
+])
+
+
 
     # Racism, discrimination, identity
     if any(w in t for w in ["racism", "race", "racial", "segregation", "apartheid", "discrimination", "slavery"]):
@@ -130,13 +131,12 @@ def institutional_sources(topic):
 # -------------------------
 # Academic Sources
 # -------------------------
-
 def academic_sources(topic):
     t = topic.lower()
     sources = []
 
     mapping = {
-             "ancient": [
+        "ancient": [
             {"title": "Perseus Digital Library", "url": "http://www.perseus.tufts.edu/hopper/"},
             {"title": "Fordham Ancient Texts", "url": "https://sourcebooks.fordham.edu/ancient/asbook.asp"}
         ],
@@ -184,8 +184,6 @@ def academic_sources(topic):
             {"title": "Quechua Chronicles", "url": "https://www.andinaperu.com/quechua-chronicles.php"},
             {"title": "Royal Commentaries of Inca", "url": "https://oll.libertyfund.org/titles/garcilaso-de-la-vega-royal-commentaries-of-the-incas"}
         ],
-
-        # 1700s, 1800s, 1900s (your previous request)
         "1700s": [
             {"title": "Enlightenment Documents - Yale Avalon", "url": "https://avalon.law.yale.edu/subject_menus/18th.asp"},
             {"title": "French Revolution Primary Sources", "url": "https://revolution.chnm.org/"}
@@ -198,7 +196,11 @@ def academic_sources(topic):
             {"title": "League of Nations Archives", "url": "https://libraryresources.unog.ch/leagueofnationsarchives"},
             {"title": "20th Century Primary Sources - EuroDocs", "url": "https://eudocs.lib.byu.edu/index.php/20th_Century"}
         ],
-        "world war": [
+        "world war 1": [
+            {"title": "Facts about WWI", "url": "https://www.iwm.org.uk/history/5-things-you-need-to-know-about-the-first-world-war"},
+            {"title": "Causes and timeline of WWI", "url": "https://www.history.com/topics/world-war-i"}
+        ],
+        "world war 2": [
             {"title": "US Army WWII Records", "url": "https://www.history.army.mil/html/reference/wwII/index.html"},
             {"title": "Imperial War Museum WWII", "url": "https://www.iwm.org.uk/history/second-world-war"}
         ],
@@ -213,11 +215,12 @@ def academic_sources(topic):
         ]
     }
 
-    for key, items in mapping.items():
+    for key in mapping:
         if key in t:
-            sources.extend(items)
+            sources.extend(mapping[key])
 
     return sources
+
 
 
 
