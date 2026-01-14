@@ -23,11 +23,13 @@ def institutional_sources(topic):
     t = topic.lower()
     sources = []
 
-    sources.extend([
-    {"title": "UN Gender Equality", "url": "https://www.un.org/en/global-issues/gender-equality"},  # ← ADD COMMA HERE
-    {"title": "World Bank Gender Data", "url": "https://genderdata.worldbank.org/"},
-    {"title": "UN Women Data Hub", "url": "https://data.unwomen.org/"}
-])
+     # Gender Equality
+    if any(w in t for w in ["gender", "gender equality", "women", "girls"]):
+        sources.extend([
+            {"title": "UN Gender Equality", "url": "https://www.un.org/en/global-issues/gender-equality"},
+            {"title": "World Bank Gender Data", "url": "https://genderdata.worldbank.org/"},
+            {"title": "UN Women Data Hub", "url": "https://data.unwomen.org/"}
+        ])
 
 
 
