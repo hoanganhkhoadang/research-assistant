@@ -223,6 +223,10 @@ def academic_sources(topic):
         "gdp": [
             {"title": "GDP per capita global ranking", "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD"},
             {"title": "Country's GDP global ranking", "url": "https://www.worldometers.info/gdp/gdp-by-country/"}
+        ],
+        "evolution": [
+            {"title": "human evolution", "url": "https://www.britannica.com/science/human-evolution"},
+            {"title": "thery of evolution", "url": "https://www.britannica.com/science/human-evolution"}
         ]
     }
 
