@@ -85,6 +85,7 @@ def institutional_sources(topic):
             {"title": "UN Population Economics Summary", "url": "https://population.un.org/wpp/assets/Files/WPP2024_Summary-of-Results.pdf"}
         ])
 
+
     # Climate & environment
     if any(w in t for w in ["climate", "climate change", "climate crisis", "global warming", "environment", "carbon", "pollution"]):
         sources.extend([
@@ -214,6 +215,14 @@ def academic_sources(topic):
             {"title": "Gulf War Documents - National Security Archive", "url": "https://nsarchive2.gwu.edu/project/gulf-war-files"},
             {"title": "British National Archives Gulf War", "url": "https://www.nationalarchives.gov.uk/education/resources/gulf-war/"},
             {"title": "US Army Gulf War Official History", "url": "https://history.army.mil/html/bookshelves/collect/72-29.html"}
+        ],
+        "renaissance": [
+            {"title": "Italian Renassance art", "url": "https://www.nga.gov/artworks/italian-renaissance"},
+            {"title": "Renaissance history", "url": "https://www.britannica.com/event/Renaissance"}
+        ],
+        "gdp": [
+            {"title": "GDP per capita global ranking", "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD"},
+            {"title": "Country's GDP global ranking", "url": "https://www.worldometers.info/gdp/gdp-by-country/"}
         ]
     }
 
